@@ -155,3 +155,10 @@ return (
   </div>
 );
 ```
+
+### `props` and `state`
+
+- `state`: where the data lives.
+- `props`: a way to get data (`state`) into a component.
+
+- `props` (React) are similar to HTML attributes.
