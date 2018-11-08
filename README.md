@@ -156,7 +156,7 @@ return (
 );
 ```
 
-### `props` and `state`
+### 2. `props` and `state`
 
 - `state`: where the data lives.
 - `props`: a way to get data (`state`) into a component.
