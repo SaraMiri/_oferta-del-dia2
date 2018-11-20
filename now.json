@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "create-react-app",
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "alias": ["teObradoiro"],
+  "routes": [
+    { "src": "^/static/(.*)", "dest": "/static/$1" },
+    { "src": ".*", "dest": "/index.html" }
+  ]
+}
