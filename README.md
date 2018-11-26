@@ -278,6 +278,16 @@ You can never pass data up, you can only pass data down.
 
 Functions that update state and the state itself need to be in the same component.
 
+## 9.Component Lyfecicle
+
+Check out React Docs about [React.Component](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
+
+- [`ComponentDidMount`](https://reactjs.org/docs/react-component.html#componentdidmount)
+- [`ComponentDidUpdate`](https://reactjs.org/docs/react-component.html#componentdidupdate)
+- [`ComponentWillUnmount](https://reactjs.org/docs/react-component.html#componentwillunmount)
+
+### W. JSON Stringify
+
 ### X. Production build
 
 Just run
@@ -324,4 +334,25 @@ Create a custom alias
 
 ```
 ❯  now alias https://create-react-app-lzkumdple.now.sh teObradoiro
+```
+
+You can access your site through `https://obradoiroteoftw.now.sh/`.
+
+### Deploy to Netlify
+
+```
+❯ npm install -g netlify-cli
+❯ netlify --version
+netlify-cli/2.2.1 darwin-x64 node-v8.12.0
+```
+
+Create a `_redirects` file 👇
+
+```
+/*    /index.html   200
+```
+
+```
+❯ cp _redirects build/
+❯ netlify deploy
 ```

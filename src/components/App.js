@@ -12,6 +12,16 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    // Read from localStorage
+    const localStorageRef = localStorage.getItem(this.props.storeId);
+    if (localStorageRef) {
+      console.log("Restoring it!");
+      console.log(JSON.parse(localStorageRef));
+
+      this.setState({ order: JSON.parse(localStorageRef) });
+    }
+
+    // Sync data from Firebase
     const config = {
       context: this,
       state: "fishes"
@@ -21,6 +31,12 @@ class App extends React.Component {
 
   componentWillUnmount() {
     base.removeBinding(this.ref);
+  }
+
+  componentDidUpdate() {
+    // Save to localStorage
+    console.warn(this.state.order);
+    localStorage.setItem(this.props.storeId, JSON.stringify(this.state.order));
   }
 
   addFish = newFish => {
